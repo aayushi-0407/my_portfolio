@@ -1,0 +1,160 @@
+<!-- templates/experience.html -->
+{% extends 'base.html' %}
+
+{% block title %}Experience - Portfolio{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <!-- Floating Work/Tech Elements -->
+    <div class="floating-element">💼</div>
+    <div class="floating-element">💻</div>
+    <div class="floating-element">⚙️</div>
+    <div class="floating-element">�️</div>
+    <div class="floating-element">�</div>
+    <div class="floating-element">📊</div>
+    <div class="floating-element">�</div>
+    <div class="floating-element">💡</div>
+    <div class="floating-element">�</div>
+    <div class="floating-element">�</div>
+    <div class="floating-element">⚡</div>
+    <div class="floating-element">�</div>
+    <div class="floating-element">�</div>
+    <div class="floating-element">🔍</div>
+    <div class="floating-element">🏆</div>
+    <div class="floating-element">⭐</div>
+    <div class="floating-element">🔗</div>
+    <div class="floating-element">📱</div>
+    <div class="floating-element">⌚</div>
+    <div class="floating-element">🖥️</div>
+    <div class="floating-element">⌨️</div>
+    <div class="floating-element">🖱️</div>
+    <div class="floating-element">📋</div>
+    <div class="floating-element">📝</div>
+    <div class="floating-element">📑</div>
+    <div class="floating-element">📉</div>
+    <div class="floating-element">💼</div>
+    <div class="floating-element">🗂️</div>
+    <div class="floating-element">📁</div>
+    <div class="floating-element">🗃️</div>
+    <div class="floating-element">💾</div>
+    <div class="floating-element">💿</div>
+    <div class="floating-element">🔌</div>
+    <div class="floating-element">🔋</div>
+    <div class="floating-element">📡</div>
+    <div class="floating-element">🛠️</div>
+    <div class="floating-element">🔩</div>
+    <div class="floating-element">⚒️</div>
+    <div class="floating-element">📞</div>
+    <div class="floating-element">☎️</div>
+    <div class="floating-element">📠</div>
+    <div class="floating-element">🖨️</div>
+    <div class="floating-element">📷</div>
+    <div class="floating-element">📹</div>
+    <div class="floating-element">🎥</div>
+    <div class="floating-element">📺</div>
+    <div class="floating-element">📻</div>
+    <div class="floating-element">🎧</div>
+    <div class="floating-element">🎤</div>
+    <div class="floating-element">📐</div>
+    
+    <div class="container">
+        <h1 class="page-title">Work Experience</h1>
+        <div class="experience-timeline">
+            {% for experience in experiences %}
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        {{ experience.start_date|date:"M Y" }}
+                        {% if experience.end_date %}
+                            - {{ experience.end_date|date:"M Y" }}
+                        {% else %}
+                            - Present
+                        {% endif %}
+                        {% if experience.current %}
+                            <span class="current-badge">Current</span>
+                        {% endif %}
+                    </div>
+                    <div class="timeline-content">
+                        <h3>{{ experience.position }}</h3>
+                        <h4>{{ experience.company }}</h4>
+                        <p class="description">{{ experience.description }}</p>
+                        <div class="responsibilities">
+                            <h5>Key Responsibilities:</h5>
+                            <div class="responsibilities-text">{{ experience.responsibilities|linebreaks }}</div>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        May 2025 - Jul 2025
+                    </div>
+                    <div class="timeline-content">
+                        <div class="experience-header" onclick="toggleExperience('exp1')">
+                            <h3>Software Engineering Intern</h3>
+                            <h4>Google</h4>
+                            <p class="description">Engineered a full-stack in-app notification system for Google Workspace administrators...</p>
+                            <button class="expand-btn" id="btn-exp1">
+                                <i class="fas fa-chevron-down"></i> View Details
+                            </button>
+                        </div>
+                        <div class="experience-details" id="exp1" style="display: none;">
+                            <div class="responsibilities">
+                                <h5>Key Achievements:</h5>
+                                <div class="responsibilities-text">
+                                    <p>• Developed the user-facing notification component using JavaScript and TypeScript, creating an intuitive and responsive UI that improved administrator engagement with key events</p>
+                                    <p>• Implemented robust backend services in C++ to process event triggers, fetch relevant data, and serve notification payloads via internal APIs, ensuring high performance and reliability</p>
+                                    <p>• Designed and built a data collection interface using Kotlin, which aggregated events from various Workspace services to feed the notification triggering logic</p>
+                                    <p>• Collaborated in an Agile environment with product managers, UX designers, and senior engineers, participating in code reviews and design discussions to ensure the feature met Google's high standards for quality and scalability</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        Aug 2024 - Dec 2024
+                    </div>
+                    <div class="timeline-content">
+                        <div class="experience-header" onclick="toggleExperience('exp2')">
+                            <h3>Teaching Assistant (Problem Solving & Computer Programming)</h3>
+                            <h4>IIIT Vadodara</h4>
+                            <p class="description">Mentored a cohort of over 200 first-year students in the foundational "Problem Solving and Computer Programming" course...</p>
+                            <button class="expand-btn" id="btn-exp2">
+                                <i class="fas fa-chevron-down"></i> View Details
+                            </button>
+                        </div>
+                        <div class="experience-details" id="exp2" style="display: none;">
+                            <div class="responsibilities">
+                                <h5>Key Responsibilities:</h5>
+                                <div class="responsibilities-text">
+                                    <p>• Facilitated weekly lab sessions, assisting students in debugging code and reinforcing core concepts in C++, data structures, and algorithms</p>
+                                    <p>• Evaluated and provided constructive feedback on over 500+ coding assignments and projects, improving student code quality and adherence to best practices</p>
+                                    <p>• Hosted doubt-solving sessions to clarify complex theoretical topics, leading to improved student understanding and academic performance</p>
+                                    <p>• Mentored students in developing problem-solving skills and programming fundamentals</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<script>
+function toggleExperience(expId) {
+    const details = document.getElementById(expId);
+    const btn = document.getElementById('btn-' + expId);
+    const icon = btn.querySelector('i');
+    
+    if (details.style.display === 'none' || details.style.display === '') {
+        details.style.display = 'block';
+        btn.innerHTML = '<i class="fas fa-chevron-up"></i> Hide Details';
+        details.style.animation = 'slideDown 0.3s ease-out';
+    } else {
+        details.style.display = 'none';
+        btn.innerHTML = '<i class="fas fa-chevron-down"></i> View Details';
+    }
+}
+</script>
+{% endblock %}

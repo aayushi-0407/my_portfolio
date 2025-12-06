@@ -1,0 +1,201 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+{% l                                                            <div class="skill-slide">
+                        <div class="skill-icon text-icon">C++</div>
+                        <h3>C++</h3>
+                    </div>
+                    <div class="skill-slide">
+                        <div class="skill-icon text-icon">C</div>
+                        <h3>C</h3>
+                    </div>     <div class="skill-slide">
+                        <div class="skill-icon text-icon">C++</div>
+                        <h3>C++</h3>
+                    </div>
+                    <div class="skill-slide">
+                        <div class="skill-icon text-icon">C</div>
+                        <h3>C</h3>
+                    </div>ass="skill-slide">
+                        <div class="skill-icon">🗃️</div>
+                        <h3>SQL</h3>
+                    </div>
+                    <div class="skill-slide">
+                        <div class="skill-icon text-icon">C++</div>
+                        <h3>C++</h3>
+                    </div>
+                    <div class="skill-slide">
+                        <div class="skill-icon text-icon">C</div>
+                        <h3>C</h3>
+                    </div>
+                    <div class="skill-slide">
+                        <div class="skill-icon">🍃</div>
+                        <h3>MongoDB</h3>
+                    </div>="skill-slide">
+                        <div class="skill-icon">🗃️</div>
+                        <h3>SQL</h3>
+                    </div>
+                    <div class="skill-slide">
+                        <div class="skill-icon text-icon">C++</div>
+                        <h3>C++</h3>
+                    </div>
+                    <div class="skill-slide">
+                        <div class="skill-icon text-icon">C</div>
+                        <h3>C</h3>
+                    </div>
+                    <div class="skill-slide">
+                        <div class="skill-icon">🍃</div>
+                        <h3>MongoDB</h3>
+                    </div>
+{% block title %}Home - Portfolio{% endblock %}
+
+{% block page_style %}
+body { padding-top: 0; }
+{% endblock %}
+
+{% block navbar %}
+<!-- No navbar for home page -->
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            {% if contact_info %}
+                <h1>Hi, I am {{ contact_info.name }}</h1>
+                <p class="hero-subtitle">{{ contact_info.bio }}</p>
+            {% else %}
+                <h1>Hi <span class="wave-hand">👋</span>, I am Aayushi Singh</h1>
+                <p class="hero-subtitle">I believe that elegant code and powerful poetry share a common soul. One uses words to weave verses that connect; the other uses logic to build solutions that are experienced.</p>
+                <p class="hero-description">As a final-year student at IIIT Vadodara, I've learned the language of technology. But I strive to build with the heart of a poet—to create work that is not only functional but also intuitive and impactful.</p>
+                <p class="hero-tagline">This portfolio is my collection of verses. Let's explore them together.</p>
+            {% endif %}
+            
+            <div class="hero-buttons">
+                <a href="{% url 'portfolio:education' %}" class="btn btn-primary">
+                    <i class="fas fa-graduation-cap"></i>
+                    Education
+                </a>
+                <a href="{% url 'portfolio:projects' %}" class="btn btn-primary">
+                    <i class="fas fa-code"></i>
+                    Projects
+                </a>
+                <a href="{% url 'portfolio:experience' %}" class="btn btn-primary">
+                    <i class="fas fa-briefcase"></i>
+                    Experience
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="skills" id="skills">
+    <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-showcase">
+            <div class="skill-carousel">
+                {% for skill in skills %}
+                    <div class="skill-slide">
+                        <div class="skill-icon">{{ skill.icon }}</div>
+                        <h3>{{ skill.name }}</h3>
+                    </div>
+                {% empty %}
+                    <div class="skill-slide">
+                        <div class="skill-icon">🐍</div>
+                        <h3>Python</h3>
+                    </div>
+                    <div class="skill-slide">
+                        <div class="skill-icon">🗃️</div>
+                        <h3>SQL</h3>
+                    </div>
+                    <div class="skill-slide">
+                        <div class="skill-icon">⚙️</div>
+                        <h3>C++</h3>
+                    </div>
+                    <div class="skill-slide">
+                        <div class="skill-icon">�</div>
+                        <h3>C</h3>
+                    </div>
+                    <div class="skill-slide">
+                        <div class="skill-icon">🍃</div>
+                        <h3>MongoDB</h3>
+                    </div>
+                    <div class="skill-slide">
+                        <div class="skill-icon">🐳</div>
+                        <h3>Docker</h3>
+                    </div>
+                    <div class="skill-slide">
+                        <div class="skill-icon">🌶️</div>
+                        <h3>Flask</h3>
+                    </div>
+                    <div class="skill-slide">
+                        <div class="skill-icon">🤖</div>
+                        <h3>Machine Learning</h3>
+                    </div>
+                    <div class="skill-slide">
+                        <div class="skill-icon">🔤</div>
+                        <h3>NLP</h3>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-content">
+            {% if contact_info %}
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>{{ contact_info.email }}</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>{{ contact_info.phone }}</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>{{ contact_info.location }}</span>
+                    </div>
+                </div>
+                <div class="social-links">
+                    {% if contact_info.linkedin %}
+                        <a href="{{ contact_info.linkedin }}" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    {% endif %}
+                    {% if contact_info.github %}
+                        <a href="{{ contact_info.github }}" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    {% endif %}
+                </div>
+            {% else %}
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>12aaayushisingh@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 8347865921</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>India</span>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/aayushi-singh-857669253" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/aayushi-0407" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

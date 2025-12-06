@@ -1,0 +1,372 @@
+<!-- templates/projects.html -->
+{% extends 'base.html' %}
+
+{% block title %}Projects - Portfolio{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <!-- Floating Tech/Project Elements -->
+    <div class="floating-element">💻</div>
+    <div class="floating-element">🚀</div>
+    <div class="floating-element">⚡</div>
+    <div class="floating-element">🔧</div>
+    <div class="floating-element">⚙️</div>
+    <div class="floating-element">🎯</div>
+    <div class="floating-element">💡</div>
+    <div class="floating-element">🏆</div>
+    <div class="floating-element">⭐</div>
+    <div class="floating-element">🔗</div>
+    <div class="floating-element">📊</div>
+    <div class="floating-element">📈</div>
+    <div class="floating-element">🌐</div>
+    <div class="floating-element">🔍</div>
+    <div class="floating-element">📱</div>
+    <div class="floating-element">🖥️</div>
+    <div class="floating-element">⌨️</div>
+    <div class="floating-element">🖱️</div>
+    <div class="floating-element">💾</div>
+    <div class="floating-element">💿</div>
+    <div class="floating-element">📡</div>
+    <div class="floating-element">🛠️</div>
+    <div class="floating-element">🔌</div>
+    <div class="floating-element">🔋</div>
+    <div class="floating-element">🎨</div>
+    <div class="floating-element">🖌️</div>
+    <div class="floating-element">📝</div>
+    <div class="floating-element">📋</div>
+    <div class="floating-element">📄</div>
+    <div class="floating-element">🗂️</div>
+    <div class="floating-element">📁</div>
+    <div class="floating-element">💼</div>
+    <div class="floating-element">🎪</div>
+    <div class="floating-element">🎭</div>
+    <div class="floating-element">🎬</div>
+    <div class="floating-element">🎮</div>
+    <div class="floating-element">🎲</div>
+    <div class="floating-element">🧩</div>
+    <div class="floating-element">🔮</div>
+    <div class="floating-element">🎊</div>
+    <div class="floating-element">🎉</div>
+    <div class="floating-element">🏅</div>
+    <div class="floating-element">🥇</div>
+    <div class="floating-element">🎖️</div>
+    <div class="floating-element">🏵️</div>
+    <div class="floating-element">🌟</div>
+    <div class="floating-element">✨</div>
+    <div class="floating-element">💎</div>
+    <div class="floating-element">🔥</div>
+    <div class="floating-element">⚡</div>
+    
+    <div class="container">
+        <h1 class="page-title">My Projects</h1>
+        <div class="projects-grid">
+            
+            <!-- Project 1: AI Chatbot for 5G Network Automation -->
+            <div class="project-card" onclick="openModal('modal1')">
+                <div class="project-image">
+                    <div class="project-icon">🤖</div>
+                </div>
+                <div class="project-header">
+                    <h3>AI Chatbot for 5G Network Automation</h3>
+                    <div class="project-tags">
+                        <span class="tag">AI/ML</span>
+                        <span class="tag">5G Networks</span>
+                        <span class="tag">NLP</span>
+                    </div>
+                    <p class="project-summary">Advanced chatbot leveraging Mistral LLM to automate 5G network configuration...</p>
+                </div>
+            </div>
+
+            <!-- Project 2: Personal Finance Tracker -->
+            <div class="project-card" onclick="openModal('modal2')">
+                <div class="project-image">
+                    <div class="project-icon">💰</div>
+                </div>
+                <div class="project-header">
+                    <h3>Personal Finance Tracker</h3>
+                    <div class="project-tags">
+                        <span class="tag">Full-Stack</span>
+                        <span class="tag">Django</span>
+                        <span class="tag">Web Dev</span>
+                    </div>
+                    <p class="project-summary">Comprehensive web application for managing personal finances with expense tracking and visualization...</p>
+                </div>
+            </div>
+
+            <!-- Project 3: BookSwap - Hackathon Project -->
+            <div class="project-card" onclick="openModal('modal3')">
+                <div class="project-image">
+                    <div class="project-icon">📚</div>
+                </div>
+                <div class="project-header">
+                    <h3>BookSwap (HTM Hackathon - Runner-Up)</h3>
+                    <div class="project-tags">
+                        <span class="tag">Hackathon</span>
+                        <span class="tag">Backend</span>
+                        <span class="tag">AI Integration</span>
+                        <span class="tag award">🏆 Runner-Up</span>
+                    </div>
+                    <p class="project-summary">Multi-faceted platform for book lovers with exchange features and AI-powered story generation...</p>
+                </div>
+            </div>
+
+            <!-- Project 4: Machine Learning Explorations -->
+            <div class="project-card" onclick="openModal('modal4')">
+                <div class="project-image">
+                    <div class="project-icon">🧠</div>
+                </div>
+                <div class="project-header">
+                    <h3>Machine Learning Explorations</h3>
+                    <div class="project-tags">
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Data Science</span>
+                        <span class="tag">CNN</span>
+                    </div>
+                    <p class="project-summary">Curated collection of ML projects exploring fundamental concepts from regression to neural networks...</p>
+                </div>
+            </div>
+
+            <!-- Project 5: NLP with FastText -->
+            <div class="project-card" onclick="openModal('modal5')">
+                <div class="project-image">
+                    <div class="project-icon">🔤</div>
+                </div>
+                <div class="project-header">
+                    <h3>NLP with FastText: Word Embeddings & Classification</h3>
+                    <div class="project-tags">
+                        <span class="tag">NLP</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">FastText</span>
+                        <span class="tag">Word Embeddings</span>
+                    </div>
+                    <p class="project-summary">Advanced NLP project leveraging FastText for word embeddings and text classification tasks...</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Modal Overlays -->
+<!-- Modal 1: AI Chatbot for 5G Network Automation -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+        <div class="modal-header">
+            <div class="modal-icon">🤖</div>
+            <h2>AI Chatbot for 5G Network Automation</h2>
+            <div class="project-tags">
+                <span class="tag">AI/ML</span>
+                <span class="tag">5G Networks</span>
+                <span class="tag">NLP</span>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="project-description">
+                <p>An advanced chatbot designed to streamline the complex process of configuring 5G network components. Leveraging the power of the Mistral Large Language Model, this tool interprets natural language commands from network operators to automatically generate the necessary YAML configuration files.</p>
+            </div>
+            <div class="project-features">
+                <h5>Key Features:</h5>
+                <ul>
+                    <li><strong>Natural Language Interface:</strong> Utilizes a HuggingFace-integrated Mistral model to understand user requests for configuring components like gNBs (5G base stations) and UEs (User Equipment).</li>
+                    <li><strong>Automated YAML Generation:</strong> Translates parsed user commands into valid, structured YAML configuration files, eliminating manual coding.</li>
+                    <li><strong>Real-time Network Simulation:</strong> Integrates with UERANSIM to simulate the 5G network components based on the generated configurations.</li>
+                    <li><strong>Live Monitoring & Validation:</strong> Employs Prometheus and Grafana to provide a live dashboard for monitoring network performance.</li>
+                </ul>
+            </div>
+            <div class="tech-stack">
+                <strong>Tech Stack:</strong> Python, Mistral LLM, HuggingFace, UERANSIM, Prometheus, Grafana, YAML
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/aayushi-0407/5g_automation_chatbot" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-github"></i> GitHub Repository
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 2: Personal Finance Tracker -->
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <div class="modal-header">
+            <div class="modal-icon">💰</div>
+            <h2>Personal Finance Tracker</h2>
+            <div class="project-tags">
+                <span class="tag">Full-Stack</span>
+                <span class="tag">Django</span>
+                <span class="tag">Web Dev</span>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="project-description">
+                <p>A comprehensive web application built with Django to provide users with a simple and effective tool for managing their personal finances. The application allows for seamless expense tracking, wallet management, and visualization of spending habits to promote better financial awareness.</p>
+            </div>
+            <div class="project-features">
+                <h5>Key Features:</h5>
+                <ul>
+                    <li><strong>Secure User Authentication:</strong> Implemented a complete user registration and login system to ensure private and secure access to financial data.</li>
+                    <li><strong>Dynamic Wallet System:</strong> Developed features for users to manage their wallet balance by adding funds and logging all transactions.</li>
+                    <li><strong>CRUD Functionality:</strong> Enabled full CRUD operations for spending transactions, allowing users to add, view, and categorize their expenses.</li>
+                    <li><strong>Data Visualization:</strong> Provided users with a clear history and trends of their spending patterns to help them make informed financial decisions.</li>
+                </ul>
+            </div>
+            <div class="tech-stack">
+                <strong>Tech Stack:</strong> Django, Python, HTML, CSS, SQLite
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/aayushi-0407/finance" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-github"></i> GitHub Repository
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 3: BookSwap - Hackathon Project -->
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal3')">&times;</span>
+        <div class="modal-header">
+            <div class="modal-icon">📚</div>
+            <h2>BookSwap (HTM Hackathon - Runner-Up)</h2>
+            <div class="project-tags">
+                <span class="tag">Hackathon</span>
+                <span class="tag">Backend</span>
+                <span class="tag">AI Integration</span>
+                <span class="tag award">🏆 Runner-Up</span>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="project-description">
+                <p>Contributed as a backend developer for "BookSwap," a multi-faceted platform for book lovers, during the HTM Hackathon where our team secured the <strong>Runner-Up</strong> position. The application was designed to facilitate the exchange of physical books, allow authors to publish original content, and even generate unique AI-powered stories.</p>
+            </div>
+            <div class="project-features">
+                <h5>My Contributions (Backend):</h5>
+                <ul>
+                    <li>Designed the database schema and logic for managing users, books, and exchange requests.</li>
+                    <li>Developed RESTful API endpoints for user authentication, book publishing, and content categorization (by author, genre, etc.).</li>
+                    <li>Integrated an AI model to power the "story generation" feature, which created unique narratives complete with images based on user prompts.</li>
+                    <li>Collaborated with frontend developers and app developers to ensure seamless data flow and functionality across the platform.</li>
+                </ul>
+            </div>
+            <div class="tech-stack">
+                <strong>Tech Stack:</strong> Backend APIs, Python, Database Design, AI Integration
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/orgs/MountainByte-HTM/repositories" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-github"></i> GitHub Organization
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 4: Machine Learning Explorations -->
+<div id="modal4" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal4')">&times;</span>
+        <div class="modal-header">
+            <div class="modal-icon">🧠</div>
+            <h2>Machine Learning Explorations</h2>
+            <div class="project-tags">
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Data Science</span>
+                <span class="tag">CNN</span>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="project-description">
+                <p>A curated collection of projects undertaken to explore and master fundamental concepts in Machine Learning and Deep Learning. This repository serves as a practical log of my journey through various ML domains, from basic regression to complex neural networks.</p>
+            </div>
+            <div class="project-features">
+                <h5>Projects Include:</h5>
+                <ul>
+                    <li><strong>Supervised Learning:</strong> Implemented models for classification and regression tasks, such as sentiment analysis and house price prediction.</li>
+                    <li><strong>Unsupervised Learning:</strong> Applied clustering algorithms like K-Means to identify patterns in unlabeled datasets.</li>
+                    <li><strong>Convolutional Neural Networks (CNN):</strong> Built and trained CNNs for image recognition and classification tasks, demonstrating an understanding of deep learning principles.</li>
+                </ul>
+            </div>
+            <div class="tech-stack">
+                <strong>Tech Stack:</strong> Python, Scikit-learn, Pandas, TensorFlow, Keras, Matplotlib
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/aayushi-0407/ML-Projects" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-github"></i> GitHub Repository
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 5: NLP with FastText -->
+<div id="modal5" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal5')">&times;</span>
+        <div class="modal-header">
+            <div class="modal-icon">🔤</div>
+            <h2>NLP with FastText: Word Embeddings & Classification</h2>
+            <div class="project-tags">
+                <span class="tag">NLP</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">FastText</span>
+                <span class="tag">Word Embeddings</span>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="project-description">
+                <p>An exploration into Natural Language Processing that leverages the FastText library to perform two distinct tasks: unsupervised word embedding generation and supervised text classification. This project highlights the power of FastText's subword information model to handle morphologically rich languages and out-of-vocabulary words effectively.</p>
+            </div>
+            <div class="project-features">
+                <h5>Key Implementations:</h5>
+                <ul>
+                    <li><strong>Indian Recipe Word Embeddings (Unsupervised):</strong> Developed and trained an unsupervised FastText model on a dataset of Indian recipes. The resulting word embeddings successfully capture the semantic relationships between ingredients and cooking methods, providing a foundation for recipe analysis and similarity comparison.</li>
+                    <li><strong>News Category Classification (Supervised):</strong> Built a supervised FastText model to classify news articles into predefined categories like politics, sports, and technology. The model was trained on a labeled dataset, demonstrating a practical application of text classification with high efficiency and accuracy.</li>
+                </ul>
+            </div>
+            <div class="tech-stack">
+                <strong>Tech Stack:</strong> Python, FastText, Pandas, NLTK, Scikit-learn
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/aayushi-0407" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-github"></i> GitHub Repository
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            if (modal.style.display === 'block') {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+});
+</script>
+{% endblock %}

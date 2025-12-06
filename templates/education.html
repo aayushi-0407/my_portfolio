@@ -1,0 +1,126 @@
+<!-- templates/education.html -->
+{% extends 'base.html' %}
+
+{% block title %}Education - Portfolio{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <!-- Floating Educational Elements -->
+    <div class="floating-element">✏️</div>
+    <div class="floating-element">📝</div>
+    <div class="floating-element">📚</div>
+    <div class="floating-element">🖊️</div>
+    <div class="floating-element">📄</div>
+    <div class="floating-element">🎓</div>
+    <div class="floating-element">📐</div>
+    <div class="floating-element">🖍️</div>
+    <div class="floating-element">📋</div>
+    <div class="floating-element">📖</div>
+    <div class="floating-element">✂️</div>
+    <div class="floating-element">🖇️</div>
+    <div class="floating-element">📏</div>
+    <div class="floating-element">🧮</div>
+    <div class="floating-element">📑</div>
+    <div class="floating-element">🗂️</div>
+    <div class="floating-element">📓</div>
+    <div class="floating-element">📔</div>
+    <div class="floating-element">📕</div>
+    <div class="floating-element">📗</div>
+    <div class="floating-element">📘</div>
+    <div class="floating-element">📙</div>
+    <div class="floating-element">🧽</div>
+    <div class="floating-element">📎</div>
+    <div class="floating-element">🖍️</div>
+    <div class="floating-element">📌</div>
+    <div class="floating-element">🔖</div>
+    <div class="floating-element">🧾</div>
+    <div class="floating-element">📜</div>
+    <div class="floating-element">🗃️</div>
+    <div class="floating-element">🖊️</div>
+    <div class="floating-element">📊</div>
+    <div class="floating-element">📈</div>
+    <div class="floating-element">📉</div>
+    <div class="floating-element">🗒️</div>
+    <div class="floating-element">📝</div>
+    <div class="floating-element">🔍</div>
+    <div class="floating-element">🔎</div>
+    <div class="floating-element">💡</div>
+    <div class="floating-element">🧠</div>
+    <div class="floating-element">🎯</div>
+    <div class="floating-element">📍</div>
+    <div class="floating-element">🗓️</div>
+    <div class="floating-element">📅</div>
+    <div class="floating-element">⏰</div>
+    <div class="floating-element">🔔</div>
+    <div class="floating-element">📢</div>
+    <div class="floating-element">📝</div>
+    <div class="floating-element">🎨</div>
+    <div class="floating-element">🖌️</div>
+    <div class="floating-element">📌</div>
+    <div class="floating-element">🧮</div>
+    <div class="floating-element">🎒</div>
+    <div class="floating-element">📏</div>
+    <div class="floating-element">🗂️</div>
+    <div class="floating-element">📊</div>
+    
+    <div class="container">
+        <h1 class="page-title">Education</h1>
+        <div class="education-timeline">
+            {% for education in educations %}
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        {{ education.start_date.year }}
+                        {% if education.end_date %}
+                            - {{ education.end_date.year }}
+                        {% else %}
+                            - Present
+                        {% endif %}
+                    </div>
+                    <div class="timeline-content">
+                        <h3>{{ education.degree }}</h3>
+                        <h4>{{ education.field_of_study }}</h4>
+                        <p class="institution">{{ education.institution }}</p>
+                        {% if education.grade %}
+                            <p class="grade">Grade: {{ education.grade }}</p>
+                        {% endif %}
+                        {% if education.description %}
+                            <p class="description">{{ education.description }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% empty %}
+                <div class="timeline-item">
+                    <div class="timeline-date">2022 - 2026</div>
+                    <div class="timeline-content">
+                        <h3>BTech in Computer Science and Engineering</h3>
+                        <h4>Computer Science and Engineering</h4>
+                        <p class="institution">Indian Institute of Information Technology Vadodara</p>
+                        <p class="grade">CPI: 8.37</p>
+                        <p class="description">Currently pursuing undergraduate degree with focus on software development, algorithms, and emerging technologies.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2020 - 2022</div>
+                    <div class="timeline-content">
+                        <h3>Higher Secondary</h3>
+                        <h4>Science Stream</h4>
+                        <p class="institution">DAV International School</p>
+                        <p class="grade">96% at 12th Board</p>
+                        <p class="description">Completed higher secondary education with excellent academic performance.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2020</div>
+                    <div class="timeline-content">
+                        <h3>Secondary School</h3>
+                        <h4>General Education</h4>
+                        <p class="institution">DAV International School</p>
+                        <p class="grade">95% at 10th Boards</p>
+                        <p class="description">Completed secondary education with outstanding academic performance.</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
